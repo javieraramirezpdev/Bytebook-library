@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteBook — Biblioteca Digital</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__icon">✦</span>
+        ByteBook
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="nav__link">Inicio</a>
+        <a href="#libro-de-la-semana" class="nav__link">Libro</a>
+        <a href="#contacto" class="nav__link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Biblioteca Digital Femenina</p>
+      <h1 class="hero__title">Bienvenida a<br><em>ByteBook</em></h1>
+      <p class="hero__subtitle">Tu rincón literario digital, cuidado con amor para cada lectora.</p>
+      <a href="#libro-de-la-semana" class="btn">
+        Explorar Libros
+        <i class='bx bx-book-open'></i>
+      </a>
+    </div>
+    <div class="hero__scroll-hint">
+      <i class='bx bx-chevron-down'></i>
+    </div>
+  </section>
+
+  <!-- ═══ LIBRO DE LA SEMANA ═══ -->
+  <section id="libro-de-la-semana" class="book-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">✦ Destacado</p>
+        <h2 class="section-title">Libro de la Semana</h2>
+      </div>
+
+      <div class="book-card">
+        <div class="book-card__image-wrap">
+          <img src="libro1.jpg" alt="El Gran Gatsby" class="book-card__img">
+          <div class="book-card__badge">Semana actual</div>
+        </div>
+
+        <div class="book-card__body">
+          <p class="book-card__genre">Ficción clásica · 1925</p>
+          <h3 class="book-card__title">El Gran Gatsby</h3>
+          <p class="book-card__author">F. Scott Fitzgerald</p>
+
+          <div class="book-card__divider"></div>
+
+          <p class="book-card__desc">
+            Jay Gatsby organiza fiestas extravagantes en su mansión de Long Island con una sola esperanza: reencontrarse con Daisy Buchanan, su amor perdido. Una novela sobre el sueño americano, la decadencia social y la búsqueda incesante de la felicidad.
+          </p>
+
+          <div class="book-card__meta">
+            <span><i class='bx bx-star'></i> Clásico atemporal</span>
+            <span><i class='bx bx-time'></i> ~200 páginas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer id="contacto" class="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <p class="footer__logo">
+          <span class="logo__icon">✦</span> ByteBook
+        </p>
+        <p class="footer__tagline">Biblioteca digital pensada para todas</p>
+      </div>
+
+      <div class="footer__contact">
+        <h3 class="footer__heading">Contáctanos</h3>
+        <p><i class='bx bx-envelope'></i> contacto@biblioteca.cl</p>
+        <p><i class='bx bx-phone'></i> +56 9 5724 5678</p>
+      </div>
+
+      <div class="footer__social">
+        <h3 class="footer__heading">Redes Sociales</h3>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+          <a href="#" class="social-link" aria-label="Pinterest"><i class='bx bxl-pinterest'></i></a>
+          <a href="#" class="social-link" aria-label="TikTok"><i class='bx bxl-tiktok'></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 ByteBook — Todos los derechos reservados</p>
+      <a href="#hero" class="scroll-top" aria-label="Volver arriba">
+        <i class='bx bx-chevron-up'></i>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Menú hamburguesa
+    const toggle = document.getElementById('navToggle');
+    const nav = document.getElementById('mainNav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('nav--open');
+      toggle.classList.toggle('nav-toggle--open');
+    });
+
+    // Cerrar menú al hacer click en un link
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav--open');
+        toggle.classList.remove('nav-toggle--open');
+      });
+    });
+
+    // Header sombra al hacer scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('.header').classList.toggle('header--scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>
